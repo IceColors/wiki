@@ -60,6 +60,8 @@
 			$_POST["articleid"], $_SESSION["userid"], $textid, $revision["mediaid"]);
 			$database->query($revisionQuery);
 		}
+		$articleQuery = sprintf('UPDATE articles SET startdate = "%s", enddate = "%s" WHERE articleid = "%s"', $_POST["startdato"],$_POST["sluttdato"], $_POST["articleid"]);
+		$database->query($articleQuery);
 		header(sprintf("location: artikkel?id=%s", $_POST["articleid"]));
 		exit;
 	}
@@ -119,6 +121,18 @@
 			<a href="artikkel?id=<?php echo($article["articleid"]); ?>" class="btn btn-primary">Forkast endringer</a>
 			<br>
 			<br>
+			<div class="form-group">
+				<label for="Viktighet">Viktighet</label>
+				<input type="text" class="form-control" id="Viktighet" name="imp" value="0">
+			</div>
+			<div class="form-group">
+				<label for="Viktighet">Startdato (- for fvt., + for evt.)(eksempel: -07000421)</label>
+				<input type="text" class="form-control" id="startdato" name="startdato" value="">
+			</div>
+			<div class="form-group">
+				<label for="sluttdato">Sluttdato (- for fvt., + for evt.)(eksempel: -07000421)</label>
+				<input type="text" class="form-control" id="sluttdato" name="sluttdato" value="">
+			</div>
 			<br>
 			<img class="card-img-top" id="preview" src="<?php  echo("/wiki" . $image["path"]); ?>" alt="Card image cap">
 			<div class="form-row">

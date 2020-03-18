@@ -37,7 +37,7 @@
 		while($revision = mysqli_fetch_assoc($revisionsData)){
 			$image = getRevisionMedia($revision);
 		?>
-		<div class="col">
+		<div class="col-12">
 			<div class="card m-2 h-100">
 				<img class="card-img-top" style="height: 250px; object-fit: contain;" src="<?php  echo("/wiki" . $image["path"]); ?>" alt="Card image cap">
 				<div class="card-body">

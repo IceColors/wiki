@@ -50,7 +50,7 @@
 			$database->query($mediaQuery);
 			$mediaid = $database->insert_id;
 			
-			$articleQuery = sprintf('INSERT INTO articles (name, categoryid) VALUES ("%s", %s)', $_POST["title"], $_GET["categoryid"]);
+			$articleQuery = sprintf('INSERT INTO articles (name, categoryid, startdate, enddate) VALUES ("%s", %s, "%s", "%s")', $_POST["title"], $_GET["categoryid"], $_POST["startdato"], $_POST["sluttdato"]);
 			$database->query($articleQuery);	
 			$articleid = $database->insert_id;
 			
@@ -96,6 +96,18 @@
 			<button class="btn btn-primary" type="submit">Opprett artikkel</button>
 			<br>
 			<br>
+			<div class="form-group">
+				<label for="Viktighet">Viktighet</label>
+				<input type="text" class="form-control" id="Viktighet" name="imp" value="0">
+			</div>
+			<div class="form-group">
+				<label for="Viktighet">Startdato (- for fvt., + for evt.)(eksempel: -07000421)</label>
+				<input type="text" class="form-control" id="startdato" name="startdato" value="">
+			</div>
+			<div class="form-group">
+				<label for="sluttdato">Sluttdato (- for fvt., + for evt.)(eksempel: -07000421)</label>
+				<input type="text" class="form-control" id="sluttdato" name="sluttdato" value="">
+			</div>
 			<br>
 			<img class="card-img-top" id="preview" src="media/Solid_grey.svg" alt="Card image cap">
 			<div class="form-row">

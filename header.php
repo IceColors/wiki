@@ -47,6 +47,9 @@
 				<li class="nav-item">
 					<a class="nav-link" href="artikkel.php"> Tilfeldig Artikkel </a> 
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="timeline.php"> Tidslinje </a> 
+				</li>
 				
 			</ul>
 		</div>
